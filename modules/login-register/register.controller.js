@@ -28,7 +28,7 @@ export async function register(req,res){
     const token = jwt.sign({_id:_id},"secret")
     res.cookie("jwt", token,{
         httpOnly:true,
-        sameSite: None,
+        sameSite: "None",
         secure: true,
         maxAge: 24*60*60*1000
     })
