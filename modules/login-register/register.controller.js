@@ -24,10 +24,12 @@ export async function register(req,res){
     });
     const newUser = await user.save();
 
-    const {_id} = await newUser.toJSON()
+    const {_id} = newUser.toJSON()
     const token = jwt.sign({_id:_id},"secret")
     res.cookie("jwt", token,{
         httpOnly:true,
+        sameSite: None,
+        secure: true,
         maxAge: 24*60*60*1000
     })
 

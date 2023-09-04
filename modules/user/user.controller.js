@@ -25,7 +25,6 @@ export async function getUser (req, res){
     } catch (error) {
         return res.status(401).send({
            error: console.log(error)
-            
           })
     }
 }
