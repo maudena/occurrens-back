@@ -27,7 +27,7 @@ app.use(multer({storage: storage}).single("image"))
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:4200"],
+    origin: ["https://occurrens.netlify.app"],
   })
 );
 app.use(cookieParser());
